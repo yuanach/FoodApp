@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+
+function createQueryInput(inputNum,lables){
+	
+}
+

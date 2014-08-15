@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="QueryPlugin">
+                <param name="android-package"  value="com.cau.plugin.data.QueryPlugin"/>
+            </feature>
+        </config-file>
+ </platform>
