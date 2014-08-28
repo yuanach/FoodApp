@@ -66,6 +66,7 @@ cameraExport.getPicture = function(successCallback, errorCallback, options) {
     exec(successCallback, errorCallback, "Camera", "takePicture", args);
     // XXX: commented out
     //return new CameraPopoverHandle();
+    //return true;
 };
 
 cameraExport.cleanup = function(successCallback, errorCallback) {

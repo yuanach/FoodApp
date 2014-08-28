@@ -23,8 +23,12 @@ import android.os.Bundle;
 
 import org.apache.cordova.*;
 import org.apache.cordova.camera.CameraLauncher;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.cau.plugin.data.Query;
+import com.cau.plugin.data.Upload;
+import com.cau.transit.Converse;
 
 public class FoodApp extends CordovaActivity 
 {
@@ -32,14 +36,11 @@ public class FoodApp extends CordovaActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState); 
-        super.init();
-        //
-        
-        super.loadUrl(Config.getStartUrl()); 
-        
+        super.init(); 
+        super.loadUrl(Config.getStartUrl());  
         //super.loadUrl("file:///android_asset/www/index.html")
       // 
-     this.appView.addJavascriptInterface(new Query(), "android"); 
+     this.appView.addJavascriptInterface(new Converse(), "android"); 
      //this.appView.addJavascriptInterface(new CameraLauncher(), "navigator"); 
     } 
 }

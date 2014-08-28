@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
 encoding//assets/www/Values/dataArray.js=GB2312
-encoding//assets/www/js/com/foodscript.js=GB2312
-encoding//assets/www/js/upload/upload.js=GB2312
-encoding//assets/www/js/upload/upload_funcs.js=GB2312
+encoding//assets/www/back/infomation.html=UTF-8
+encoding//assets/www/js/com/back/upload.js=GB2312
+encoding//assets/www/js/com/back/upload_funcs.js=GB2312
 encoding//src/com/cau/foodapp/FoodApp.java=GB2312

@@ -40,32 +40,12 @@ public class Query {
         return obj;		
 	} 
     
-    @JavascriptInterface 
-    public boolean put(String obj,String jsn) throws JSONException{
-    	System.out.println(obj+"---------"+jsn); 
-    	//JSONObject jo=new JSONObject();
-    	jsn=jsn.substring(1, jsn.length()-1);
-    	String objArray[]=obj.split(",");
-    	
-    	String jo[]=jsn.split(","); //
-    	String jo2[];
-    	/*
-    	for(int i=0;i<objArray.length;i++){
-    		jo2[i]=new String[objArray.length];
-    	}
-    	*/
-    	List<String[]> list= new ArrayList<String[]>();
-    	
-    	for(int i=0;i<jo.length;i++){
-    		//System.out.println(jo[i]);
-    		jo[i]=jo[i].substring(1, jo[i].length()-1);
-    		jo2=jo[i].split("\":");
-    		if(jo2[1].equals("\"")) jo2[1]="";
-    		else jo2[1]=jo2[1].substring(1, jo2[1].length());
-    		//System.out.println(jo2[0]+","+jo2[1]);
-    		list.add(jo2);
-    	}
-    	System.out.println(list.toString());
+    @JavascriptInterface
+    public boolean wrap(String obj,String jstring,String img,String video) throws JSONException{
+    	System.out.println("---------"+jstring); 
+    	JSONObject jsn=Data.toJSONObject(jstring);
+    	System.out.println(jsn); 
         return true;		
 	} 
+   
 }

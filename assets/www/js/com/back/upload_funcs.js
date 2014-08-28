@@ -1,18 +1,7 @@
  /**
  * 
- */
-food.upload={
-		"grap":function Upload(input,labels,obj){
-			//var jsn={obj:[{},{}]};
-			var jsn={};
-			var i=0;
-			input.find(":text").each(function(){	
-				jsn[labels[i++]]=$(this).val();
-			});
-			//android.put(obj,jsn);
-			return true;
-		}
-}
+
+
 
 food.image={
 		"pictureSource":navigator.camera.PictureSourceType,
@@ -73,6 +62,6 @@ food.upload={
 		}
 }
 
-
+ */
 
 

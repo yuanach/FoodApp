@@ -2,151 +2,234 @@
  * 
  */
 
-var food={};
+(function(){
+    var food={},
+        myDevice,
+        create,
+        image,
+        location,
+        file,
+        dialogs,
+        upload;
 
-food.create={
-		"Div":function(a_divTem,a_divId){
-			  return a_divTem.clone().attr("id",a_divId);
-			  }
-		,
-		"HeadTagTemplate":
-			function (divTem,divId,tagNum,aId){  
-		 	var tag=
-		 		divTem.clone().attr({"id":divId,"data-role":"navbar","data-position":"fixed"})
-		 			.append("<ul></ul>").trigger("create");
-		 	for(var i=1;i<=tagNum;i++){		
-		 		tag.find("ul").append("<li><a id=\""+aId+"\" pos=\""+i+"\"></a></li>").trigger("create");
-		 	}
-		 	return tag;
-		 }
-		,
-		"GridLayout":
-			function (rowNum,colNum){ 
-		 }
-		,
-		"Table":
-			function(){
-			return "<table></table>";
-		}
-		,
-		"TableLine":
-			function(){
-			return "<tr><td></td><td></td></tr>";
-		}
-		,
-		"InputText":
-			function(inputTem,inputId){
-			return inputTem.clone().attr({"id":inputId});
-		}
-		,
-		"Button":
-			function(aTem,btnId,text,inline,mini){
-			return  aTem.clone()
-					.attr({"id":btnId,"data-role":"button","data-inline":inline,"data-mini":mini})
-						.text(text);
-		}
-		,
-		"List":
-			function(ulTem,ulId,text){
-		 	var ul=
-		 		ulTem.clone()
-		 			.attr({"id":ulId+"_ul_list","data-role":"listview"});
-		 	for(var i=1;i<=text.length;i++){
-		 		ul.append("<li ><a id=\"item\" pos=\""+i+"\">"+text[i-1]+"</a></li>").trigger("create");
-		 	}
-		 	return ul;
-		 },
-		 "aList":
-				function(ulTem,ulId,text,rel){
-			 	var ul=
-			 		ulTem.clone()
-			 			.attr({"id":ulId+"_ul_list","data-role":"listview"});
-			 	for(var i=1;i<=text.length;i++){
-			 		ul.append("<li ><a " +
-			 				"id=\"item\" " +
-			 				"data-rel=\""+rel+"\" "+
-			 				"pos=\""+i+"\">"+text[i-1]+
-			 				"</a></li>").trigger("create");
-			 	}
-			 	return ul;
-			 }
-		,
-		"HeadTag":
-			function (divTem,tag_id,types){
-			var tag_className="tags";
-			var tag_num=types.length;
-			var tag;
-			var aId="toContent";
-			tag=food.create.HeadTagTemplate(divTem,tag_id,tag_num,aId);
-			for(var i=0;i<tag_num;i++){
-				tag.find("li").eq(i).find("a").text(types[i]);
-			}
-			return tag;
-		}
-		,
-		"InputList":
-			function(divTem,divId,lables,inputTem,frtId){
-			var div=divTem.clone();
-			var input;
-			var lable;
-			var table,tr;
-			table=food.create.Table();
-			div.append(table).trigger("create");
-			div.attr({"id":divId,"data-role":"fieldcontain"});
-			for(var i=1;i<=lables.length;i++){
-				input=inputTem.clone();
-				input.attr({"id":frtId+"_"+i,"data-role":"text","type":"text","name":lables[i-1]});
-				lable=food.insert.Lable(input,lables[i-1]);
-				tr=createTableLine();
-				div.find("table").append(tr).trigger("create");
-				div.find("table tr").last().find("td").eq(0).append(lable).trigger("create");
-				div.find("table tr").last().find("td").eq(1).append(input).trigger("create");
-			}
-			return div;
-		}
-		,
-		"Detail":
-			function (divUl,json){
-			var ul=divUl.clone().attr("data-role","listview");
-			var strlist;
-			for(var i in json){
-				strlist="<li>"+i+":  "+"<span>"+json[i]+"</span></li>";
-				ul.append(strlist);
-			}
-			return ul;
-		}
-		,
-		"dialog":function(divTem,divId,title){
-			return 
-				divTem.clone()
-					.attr({"id":divId,"data-role":"page"})
-						.append(divTem.clone()
-							.attr("data-role","page")
-								.append("<h1>"+title+"</h1>"))
-							.trigger("create");
-		},
-		"":""
-};
- 
-food.insert={
-		"Lable":
-			function(obj,value){
-			return "<lable for=\""+obj.attr("id")+"\">"+value+": "+"</lable>";
-		}
-		,
-		"image":function(divId){
-			$("#"+divId).append(this).trigger("create");
-		}
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady(){
+        myDevice=
+            food.myDevice={
+                model:device.model,
+                cordova:device.cordova,
+                platform:device.platform,
+                uuid:device.uuid,
+                version:device.version,
+                name:device.name
+            };
+        image.pictureSource=navigator.camera.PictureSourceType;
+        image.destinationType=navigator.camera.DestinationType;
+    }
+
+    create=
+    food.create={
+        grid:function(){},
+        addBlock:function(grid){
+            var imglength=food.upload.img.length;
+            if( imglength!=0){
+                var i=( imglength-1) % 3;
+                var turn;
+                switch(i){
+                    case 0: turn="ui-block-a"; break;
+                    case 1: turn="ui-block-b"; break;
+                    case 2: turn="ui-block-c"; break;
+                }
+                grid.children("div")
+                    .append("<div class=\""+turn+"\"><img src=\"\"></div>")
+                        .trigger("create");
+                grid.children("div").last().find("img").src="data:image/jpeg;base64,"+food.upload.img[imglength-1];
+            }
+            //
+        }
+    };
+
+    image=
+    food.image={
+        img:"",
+    initImage:function(){
+        this.img="";
+        this.imgView="";
+    },
+    capturePhoto:function(){
+        // 使用摄像头拍照并返回一个base64-encoded字符串编码的图像数据
+        navigator.camera.getPicture( this.onPhotoDataSuccess,  this.onFail, {
+            quality: 50,
+            destinationType: image.destinationType.DATA_URL });
+    },
+    capturePhotoEdit:function(){
+        // 使用摄像头拍照并返回一个base64-encoded字符串编码的图像数据，允许编辑
+        navigator.camera.getPicture( this.onPhotoDataSuccess,  this.image.onFail, {
+            quality: 20,
+            allowEdit: true,
+            destinationType: image.destinationType.DATA_URL
+        });
+    },
+    getPhoto:function(callback) {
+        this.callback=callback;
+        // 从本地选择资源
+        navigator.camera.getPicture(this.onPhotoDataSuccess, this.onFail, {
+            quality: 50,
+            destinationType:  image.destinationType.DATA_URL,
+            sourceType: image.pictureSource.PHOTOLIBRARY
+        });
+    },
+    onPhotoDataSuccess:function (imageData) {
+        image.img=imageData;
+        image.imgView="data:image/jpeg;base64," + imageData;
+        image.callback();
+    },
+    onPhotoURISuccess:function(imageURI) {
+        var largeImage = document.getElementById('largeImage');
+        //largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+    },
+    onFail:function(message) {
+        //alert('Failed because: ' + message);
+    }
 };
 
-food.opt={
-		"add":
-			function(divTem,divId,optList){	
-				return food.create.Div(divTem,divId).attr("data-theme","b")
-								.append(optList).trigger("create");					
-			}
-}
+    location=
+    food.location={
+        initLocator:function(maximumAge,timeout,enableHighAccuracy){
+            location.position={};
+            var options={};
+            try{
+                options={
+                    maximumAge: (maximumAge != undefined && typeof maximumAge == "number" )?maximumAge:3000,
+                    timeout: (timeout != undefined && typeof timeout == "number" )?timeout:5000,
+                    enableHighAccuracy: (enableHighAccuracy  != undefined && typeof enableHighAccuracy == "boolean" )?enableHighAccuracy:false
+                };
+            }catch(err){
+                console.log("OPTIONS' initialization failed: "+err);
+            }
+            location.options=options;
+            location.watchID=null;
+            this.addEventListener();
+        },
+        getCurrentPosition:function(callback){
+            this.callback=callback;
+            navigator.geolocation.getCurrentPosition(
+                location.geolocationSuccess,
+                location.geolocationError,
+                location.options);
+        },
+        watchPosition:function(){
+            navigator.geolocation.watchPosition(
+                location.geolocationSuccess,
+                location.geolocationError,
+                location.options);
+        },
+        clearWatch:function(){
+            if (location.watchID != null) {
+                navigator.geolocation.clearWatch(location.watchID);
+                location.watchID = null;
+            }
+        },
+        geolocationSuccess:function(position){
+            console.log("Get position information Successfully.");
+            location.position=position;
+            location.retrieval();
+        },
+        geolocationError:function(err){
+            location.retrieval();
+            console.log("Get position information failed: "+err);
+        },
+        retrieval:function(){
+            this.callback(location.position);
+        }
+    };
 
+    file=
+    food.file={
 
+    };
 
- 
+    dialogs=
+    food.dialogs={
+        showAlert:function(message,title,buttonName){
+            navigator.notification.alert(
+                message,
+                this.alertDismissed,
+                title,
+                buttonName
+            );
+        },
+        showConfirm:function(message,title,buttonLabels){
+            navigator.notification.confirm(
+                message,
+                this.onConfirm,
+                title,
+                buttonLabels
+            );
+        },
+        showPrompt:function(message,title,buttonLabels,defaultText) {
+            navigator.notification.prompt(
+                message,
+                this.onPrompt,
+                title,
+                buttonLabels,
+                defaultText
+            );
+        },
+        alertDismissed:function(){
+
+        },
+        onConfirm:function(buttonIndex){
+           // alert('You selected button ' + buttonIndex);
+        },
+        onPrompt:function(results){
+          //  alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+        }
+    };
+    upload=
+    food.upload = {
+        initUpload:function(){
+            this.img={};
+            this.video={};
+            this.metaData={
+                obj:"",
+                position:{},
+                comments:{}
+            };
+         },
+        wrap:function() {
+             android.wrap(
+                 JSON.stringify(upload.metaData),
+                 JSON.stringify(upload.jsn),
+                JSON.stringify(upload.img),
+                JSON.stringify(upload.video));
+            // return true;
+        },
+        onSubmit:function (obj, jsn) {
+            this.jsn = jsn;
+            this.metaData.obj=(obj != undefined)?obj:"";
+            location.getCurrentPosition(function(position){
+                    upload.metaData.position=position;
+            });
+            upload.wrap();
+        },
+        addImage:function (type, image_count,callback) {
+             this.image_count=image_count;
+             this.callback=callback;
+               image[type](function(){
+                   if (image.img.length != 0) {
+                       upload.img[upload.image_count] = image.img;
+                       upload.callback();
+                   }
+               });
+        },
+        "addVideo":function (type, video_count) {
+            //  food.image[type]();
+            // food.upload.video[video_count]=null;
+        }
+    };
+
+    window.food=food;
+})();

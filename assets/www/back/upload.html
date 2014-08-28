@@ -55,8 +55,8 @@
 		<div  id="upload_list">
 			<ul data-role="listview">
 			<li data-icon="false" ><a id="entity"  class="upload_list"  href="#upload_e" >基础信息</a></li>
-			<li data-icon="false"><a id="res"  class="upload_list"  href="#plant" >设备资源</a></li>
-			<li data-icon="false"><a id="env"   class="upload_list" href="#harvest"  >环境</a></li>
+			<li data-icon="false"><a id="res"  class="upload_list"  href="#upload_instrument" >设备资源</a></li>
+			<li data-icon="false"><a id="env"   class="upload_list" href="#upload_environment"  >环境</a></li>
 			<li data-icon="false"><a id="media"  class="upload_list" href="#process" >视频图像</a></li>
 			</ul>
 		</div>	
@@ -93,6 +93,75 @@
 			<div id="upload_e_content"  data-role="content">
 			</div>		
 		</div>
+		
+		<!--上传农资设备信息页面 -->
+		<div id="upload_instrument" data-role="page" >
+			<div id="" data-role="header" data-position="fixed" data-theme="a">
+				<div class="ui-grid-b" data-theme="a">
+					<div class="ui-block-a">
+						<div class="ui-grid-a">
+							<div class="ui-block-a" data-theme="a">
+								<a href="#upload" data-role="button"  data-icon="home"  data-mini="true" data-iconpos="notext">首页</a>
+							</div><div></div>
+						</div>
+					</div>	
+					<div class="ui-block-b"><div class="text_center"><b>设备信息</b></div></div>
+					<div class="ui-block-c">
+						<div class="ui-grid-b">
+							<div class="ui-block-a">
+							</div>
+							<div class="ui-block-b">
+								<a id="add"  href="#" data-role="button"  data-icon="plus"  data-iconpos="notext"></a>
+							</div>
+							<div class="ui-block-c">
+								<a href="#" data-role="button"  data-icon="gear"  data-iconpos="notext">设置</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+			
+			<!-- 内容框架 -->
+			<div id="upload_e_content"  data-role="content">
+				<div>
+				</div>
+			</div>		
+		</div>
+
+		<!--上传环境信息页面 -->
+		<div id="upload_environment" data-role="page" >
+			<div id="" data-role="header" data-position="fixed" data-theme="a">
+				<div class="ui-grid-b" data-theme="a">
+					<div class="ui-block-a">
+						<div class="ui-grid-a">
+							<div class="ui-block-a" data-theme="a">
+								<a href="#upload" data-role="button"  data-icon="home"  data-mini="true" data-iconpos="notext">首页</a>
+							</div><div></div>
+						</div>
+					</div>	
+					<div class="ui-block-b"><div class="text_center"><b>生产环境信息</b></div></div>
+					<div class="ui-block-c">
+						<div class="ui-grid-b">
+							<div class="ui-block-a">
+							</div>
+							<div class="ui-block-b">
+								<a id="add"  href="#" data-role="button"  data-icon="plus"  data-iconpos="notext"></a>
+							</div>
+							<div class="ui-block-c">
+								<a href="#" data-role="button"  data-icon="gear"  data-iconpos="notext">设置</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+			
+			<!-- 内容框架 -->
+			<div id="upload_e_content"  data-role="content">
+				<div>
+				</div>
+			</div>		
+		</div>
+		
 		
 		<div data-role="page"  id="dialog">
 			<div data-role="header"  id="dialog_header">
