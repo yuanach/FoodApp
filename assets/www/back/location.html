@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="./css/jquery.mobile-1.3.2.min.css">
+    <link href="./css/toastr.css" rel="stylesheet"/>
+
+    <script type="text/javascript" charset="utf-8" src="./cordova.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="./js/jquery.mobile-1.3.2.js"></script>
+    <script src="./js/com/json2.js"></script>
+    <script src="./js/com/foodscript.js"></script>
+    <style>
+        aa{
+            text-align:center;
+        }
+        table{
+            width:100%;
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+
+<div id="location" data-role="page">
+
+    <!--Header-->
+    <div id="location_header" data-role="header">
+        <a id="back" data-icon="back" onclick="back()">&nbsp;</a>
+        <h1>获取位置</h1>
+        <a id="add" data-icon="plus" onclick="addList()">&nbsp;</a>
+    </div>
+
+    <div id="content" data-role="content">
+    </div>
+</div>
+
+<div id="list" data-role="page">
+
+    <!--Item-->
+    <div id="list_item" data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li data-icon="false"><a id="product_list" href="#" onclick="getPosition()">
+                <img src="images/location/locating.jpg">
+                <h2>获取当前位置信息</h2>
+                <p>获取当前位置信息</p></a></li>
+            <li data-icon="false"><a id="inputs_list" href="#" onclick="">
+                <img src="images/location/watching.jpg">
+                <h2>监控位置变化</h2>
+                <p>监控位置变化</p></a></li>
+            <li data-icon="false"><a id="environment_list" href="#" onclick="">
+                <img src="images/location/clear.jpg">
+                <h2>清除监控</h2>
+                <p>清除监控</p></a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+<script>
+    $(document).ready(function(){
+        var content=$("#content");
+        content.append($("div#list_item").clone(true)).trigger("create");
+        //$("div#footer").detach();
+    });
+    //var location=food.location;
+    function back(){
+
+    }
+    function getPosition(){
+        var location=food.location;
+        location.initLocator();
+        location.getCurrentPosition(function(position){
+            alert(position.coords.latitude+","+position.coords.longitude);
+        });
+    }
+</script>
+</html>

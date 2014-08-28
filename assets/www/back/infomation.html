@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no,initial-scale=1.0,maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="stylesheet" href="./css/jquery.mobile-1.3.2.min.css">
+  	<link href="./css/toastr.css" rel="stylesheet"/>
+  	
+	 <script type="text/javascript" charset="utf-8" src="./cordova.js"></script>
+  	<script type="text/javascript" src="./js/jquery-1.8.3.js"></script>
+  	<script type="text/javascript" src="./js/jquery.mobile-1.3.2.js"></script>
+  	<script src="./js/com/json2.js"></script>
+    <script src="./js/info.js"></script>
+    <script src="./js/com/foodscript.js"></script>
+    <style>
+        aa{
+            text-align:center;
+        }
+        table{
+            width:100%;
+            height: 100%
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="information" data-role="page">
+
+    <!--Header-->
+    <div id="information_header" data-role="header">
+        <a id="back" data-icon="back" onclick="back()">&nbsp;</a>
+        <h1>数据传送</h1>
+        <a id="add" data-icon="plus" onclick="addList()">&nbsp;</a>
+    </div>
+
+    <div id="content" data-role="content">
+    </div>
+
+</div>
+
+<div id="list" data-role="page">
+
+    <!--Item-->
+    <div id="list_item" data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li><a id="product_list" href="#" onclick="itemClick('product_list_item')">
+                <img src="images/information/product.jpg">
+                <h2>农产品、基础信息</h2>
+                <p>农产品、基础信息</p></a></li>
+            <li><a id="inputs_list" href="#" onclick="itemClick('inputs_list_item')">
+                <img src="images/information/inputs.jpg">
+                <h2>农资投入</h2>
+                <p>肥料、农药、农具等</p></a></li>
+            <li><a id="environment_list" href="#" onclick="itemClick('environment_list_item')">
+                <img src="images/information/environment.jpg">
+                <h2>环境监控</h2>
+                <p>种植环境情况</p></a></li>
+            <li><a id="operation_list" href="#" onclick="itemClick('operation_list_item')">
+                <img src="images/information/operation.jpg">
+                <h2>作业记录</h2>
+                <p></p>
+            </a></li>
+        </ul>
+    </div>
+
+    <!--addList-->
+    <div id="addList_Tem" data-role="content" data-theme="c">
+        <ul data-role="listview" data-inset="true">
+            <li data-icon="false"><a onclick="showAddView('addImage')">添加图片</a></li>
+            <li data-icon="false"><a href="">视频</a></li>
+            <li data-icon="false"><a href="">扫一扫</a></li>
+        </ul>
+    </div>
+
+    <!--addImage-->
+    <div id="addImage" data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li data-icon="false"><a onclick="addImage('getPhoto')">Local</a></li>
+            <li data-icon="false"><a onclick="addImage('capturePhoto')">Camera</a></li>
+        </ul>
+    </div>
+
+    <!--Footer-->
+    <div id="footer"  data-role="footer" class="ui-btn" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#"  onclick="reset()" data-icon="refresh">重置</a></li>
+                <li><a href="#"  onclick="submit()" data-icon="check">传送</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--ImagePanel-->
+    <div id="imagePanel" data-role="content">
+
+    </div>
+</div>
+
+<div id="product_list"  data-role="page">
+
+<!--Item-->
+<div id="product_list_item" data-role="content">
+    <ul data-role="listview" data-inset="true">
+        <li><a id="firm" href="#" onclick="itemClick('firm',1)">
+            <img src="images/information/product/firm.jpg">
+            <h2>Firm</h2>
+            <p>firm</p></a></li>
+        <li><a id="farm" href="#" onclick="itemClick('farm',1)">
+            <img src="images/information/product/farm.jpg">
+            <h2>Farm</h2>
+            <p>farm</p></a></li>
+        <li><a id="plot" href="#" onclick="itemClick('plot',1)">
+            <img src="images/information/product/plot.jpg">
+            <h2>Plot</h2>
+            <p>plot</p></a></li>
+        <li><a id="farmer" href="#" onclick="itemClick('farmer',1)">
+            <img src="images/information/product/farmer.jpg">
+            <h2>Farmer</h2>
+            <p>farmer</p></a></li>
+        <li><a id="product" href="#" onclick="itemClick('product',1)">
+            <img src="images/information/product/product.jpg">
+            <h2>Product</h2>
+            <p>product</p></a></li>
+        <li><a id="seed" href="#" onclick="itemClick('seed',1)">
+            <img src="images/information/product/seed.jpg">
+            <h2>Seed</h2>
+            <p>seed</p></a></li>
+    </ul>
+</div>
+
+<!--Firm-->
+<div id="firm" data-role="content">
+
+
+    <table><tr>
+        <td><label for="">公司编号:</label></td>
+        <td><input type="text" name="firm_id"></td>
+    </tr>
+
+        <tr>
+            <td><label for="">公司名称:</label></td>
+            <td><input type="text" name="firm_name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">描述:</label></td>
+            <td><input type="text" name="firm_info"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">备注:</label></td>
+            <td><input type="text" name="firm_memo"></td>
+        </tr></table>
+
+</div>
+
+<!--Farm-->
+<div id="farm" data-role="content">
+
+    <table><tr>
+        <td><label for="">���虹���:</label></td>
+        <td><input type="text" name="farm_id"></td>
+    </tr>
+
+        <tr>
+            <td><label for="" >���哄��绉�:</label></td>
+            <td><input type="text" name="farm_name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">��灞�����:</label></td>
+            <td><input  type="text" name="farm_owner"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">�板��:</label></td>
+            <td><input  type="text" name="farm_addr"></td>
+        </tr>
+
+        <tr>
+            <td><label for="" >���烘��杩�:</label></td>
+            <td><input type="text" name="farm_info"></td>
+        </tr>
+
+        <tr>
+            <td><label for="" >��绯绘�瑰�:</label></td>
+            <td><input type="text" name="farm_contact"></td>
+        </tr></table>
+</div>
+
+<!--Plot-->
+<div id="plot" data-role="content">
+
+    <table><tr>
+        <td><label for="">�板��缂��凤�</label></td>
+        <td><input type="text" name="plot_id"></td>
+    </tr>
+
+        <tr>
+            <td><label for="">�板����绉�:</label></td>
+            <td><input type="text" name="plot_name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">���虹���:</label></td>
+            <td><input type="text" name="farm_id"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">���哄��绉�:</label></td>
+            <td><input type="text" name="farm_name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">�板��澶у�:</label></td>
+            <td><input type="text" name="plot_size"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">�板��浣�缃�:</label></td>
+            <td><input type="text" name="plot_addr"></td>
+        </tr></table>
+
+</div>
+
+<!--Farmer-->
+<div id="farmer" data-role="content">
+
+    <table><tr>
+        <td><label for="">濮���:</label></td>
+        <td><input type="text" name="farmer_name"></td>
+    </tr>
+
+        <tr>
+            <td><label for="">�电О:</label></td>
+            <td><input type="text" name="farmer_"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">��灞�����:</label></td>
+            <td><input type="text" name="farm_id"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input type="text" name=""></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input type="text" name=""></td>
+        </tr></table>
+</div>
+
+<!--Product-->
+<div id="product" data-role="content">
+
+    <table><tr>
+        <td><label for="">浜у��缂���:</label></td>
+        <td><input type="text" name="product_id"></td>
+    </tr>
+
+        <tr>
+            <td><label for="">绉�妞�浜у����绉�:</label></td>
+            <td><input type="text" name="product_name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">绉�瀛�绫诲��:</label></td>
+            <td><input type="text" name="seed_id"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">����,�板��:</label></td>
+            <td><input type="text" name="farm_id">
+                <input type="text" name="plot_id">
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="">浠�缁�:</label></td>
+            <td><input type="text" name="product_info"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">�板��:</label></td>
+            <td><input type="text" name="plot_id"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">绉�妞��ユ��:</label></td>
+            <td><input type="text" name="product_plant"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">�惰�锋�ユ��:</label></td>
+            <td><input type="text" name="product_harvest"></td>
+        </tr></table>
+
+</div>
+
+<!--Seed-->
+<div id="seed" data-role="content">
+
+    <table><tr>
+        <td><label for="">绉�瀛�缂���:</label></td>
+        <td><input type="text" name="seed_id"></td>
+    </tr>
+
+        <tr>
+            <td><label for="">绉�瀛���绉�:</label></td>
+            <td><input type="text" name="seed_name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">璐�涔版�ユ��:</label></td>
+            <td><input type="text" name="seed_buy"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">璐�涔板��璇�:</label></td>
+            <td><input type="text" name="seed_certify"></td>
+        </tr>
+
+        <tr>
+            <td><label for="">绉�瀛���杩�:</label></td>
+            <td><input type="text" name="seed_info"></td>
+        </tr></table>
+
+</div>
+
+</div>
+
+<div id="inputs_list" data-role="page">
+
+<!--Item-->
+<div id="inputs_list_item" data-role="content">
+    <ul data-role="listview" data-inset="true">
+        <li><a id="devices" href="#" onclick="itemClick('devices')">
+            <img src="">
+            <h2></h2>
+            <p></p>devices</a></li>
+        <li><a id="fertilizer" href="#" onclick="itemClick('fertilizer')">
+            <img src="">
+            <h2></h2>
+            <p></p>fertilizer</a></li>
+        <li><a id="irrigation" href="#" onclick="itemClick('irrigation')">
+            <img src="">
+            <h2></h2>
+            <p></p>irrigation</a></li>
+        <li><a id="soil" href="#" onclick="itemClick('soil')">
+            <img src="">
+            <h2></h2>
+            <p></p>soil</a></li>
+        <li><a id="air" href="#" onclick="itemClick('air')">
+            <img src="">
+            <h2></h2>
+            <p></p>air</a></li>
+    </ul>
+</div>
+
+<!--Devices-->
+<div id="devices">
+
+    <table><tr>
+        <td><label for="">1:</label></td>
+        <td><input></td>
+    </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr></table>
+
+</div>
+
+<!--Fertilizer-->
+<div id="fertilizer" data-role="content">
+
+    <table><tr>
+        <td><label for="">1:</label></td>
+        <td><input></td>
+    </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr></table>
+
+</div>
+
+<!--Pesticide-->
+<div id="pesticide" data-role="content">
+
+    <table><tr>
+        <td><label for="">1:</label></td>
+        <td><input></td>
+    </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr></table>
+
+</div>
+
+<!--Irrigation-->
+<div id="irrigation" data-role="content">
+    <table><tr>
+        <td><label for="">1:</label></td>
+        <td><input></td>
+    </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr></table>
+</div>
+
+<!--Soil-->
+<div id="soil" data-role="content">
+
+    <table><tr>
+        <td><label for="">1:</label></td>
+        <td><input></td>
+    </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr></table>
+
+</div>
+
+<!--Air-->
+<div id="air" data-role="content">
+
+    <table><tr>
+        <td><label for="">1:</label></td>
+        <td><input></td>
+    </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+        <tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr></table>
+
+</div>
+
+</div>
+
+<div id="environment_list" data-role="page">
+
+    <!--Item-->
+    <div id="environment_list_item" data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li><a id="temperature" href="#" onclick="itemClick('temperature')">
+                <img src="">
+                <h2></h2>
+                <p></p>temperature</a></li>
+            <li><a id="humidity" href="#" onclick="itemClick('humidity')">
+                <img src="">
+                <h2></h2>
+                <p></p>humidity</a></li>
+        </ul>
+    </div>
+
+    <!--Temperature-->
+    <div id="temperature" data-role="content">
+
+        <table><tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr></table>
+
+    </div>
+
+    <!--Humidity-->
+    <div id="humidity" data-role="content">
+
+        <table><tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr></table>
+
+    </div>
+</div>
+
+<div id="operation_list" data-role="page">
+
+    <!--Item-->
+    <div id="operation_list_item" data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li><a id="fertilize" href="#" onclick="itemClick('fertilize')">
+                <img src="">
+                <h2></h2>
+                <p></p>fertilize</a></li>
+            <li><a id="pest" href="#" onclick="itemClick('pest')">
+                <img src="">
+                <h2></h2>
+                <p></p>pest</a></li>
+            <li><a id="irrigate" href="#" onclick="itemClick('irrigate')">
+                <img src="">
+                <h2></h2>
+                <p></p>irrigate</a></li>
+            <li><a id="operator" href="#" onclick="itemClick('operator')">
+                <img src="">
+                <h2></h2>
+                <p></p>operator</a></li>
+        </ul>
+    </div>
+
+    <!--Fertilize-->
+    <div id="fertilize" data-role="content">
+
+        <table><tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr></table>
+
+    </div>
+
+    <!--Pest-->
+    <div id="pest" data-role="content">
+
+        <table><tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr></table>
+
+    </div>
+
+    <!--Irrigate-->
+    <div id="irrigate" data-role="content">
+
+        <table><tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr></table>
+
+    </div>
+
+    <!--Operator-->
+    <div id="operator" data-role="content">
+
+        <table><tr>
+            <td><label for="">1:</label></td>
+            <td><input></td>
+        </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr>
+
+            <tr>
+                <td><label for="">1:</label></td>
+                <td><input></td>
+            </tr></table>
+
+    </div>
+
+</div>
+
+</body>
+
+<script>
+    var viewStack=new Array();
+    var lastView=-1
+            ,nowView=1;
+    var image_count=0;
+
+    function itemClick(text,isInput){
+        var content=$("div#content");
+        var div_len=content.children('div').length;
+        if(div_len!=0){
+            lastView++;
+            viewStack[lastView]=new Array(div_len);
+            content.children("div").each(function(i){
+                viewStack[lastView][i]=$(this).attr("id");
+            });
+        }else {
+            lastView=0;
+        }
+        var item=$("div#"+text).clone().attr({"id":text});
+        content.empty();
+        content.append(item).trigger("create");
+        if(isInput==1){
+            food.upload.initUpload();
+            content.append($("div#footer").clone(true)).trigger("create");
+        }
+        div_len=content.children('div').length;
+        if(div_len!=0){
+            viewStack[nowView]=new Array(div_len);
+            content.children("div").each(function(i){
+                viewStack[nowView][i]=$(this).attr("id");
+            });
+            nowView++;
+        }else {
+            lastView=0;
+        }
+    }
+
+    function back(){
+        if(lastView>=0){
+            var content=$("div#content");
+            var last;
+            content.empty();
+            for(var i=0;i<viewStack[lastView].length;i++){
+                last=$("div#"+viewStack[lastView][i]).clone();
+                content.append(last).trigger("create");
+            }
+            lastView--;
+        }else{
+            return ;
+        }
+    }
+
+    function getText(){
+        var jsn={};
+        $("#content").find(":input").each(function(){
+            jsn[$(this).attr("name")]=$(this).val();
+        });
+        return jsn;
+    }
+
+    function resume(jsn){
+        $("#content").find(":input").each(function(){
+            $(this).val(jsn[$(this).attr("name")]);
+        });
+    }
+
+    function reset(){
+        $("#content").find(":input").val("");
+    }
+
+    function submit(){
+        var obj;
+        food.upload.onSubmit(obj,getText());
+    }
+
+    function addList(){
+        var addList= $("div#addList");
+        if(addList.length!=0){
+            addList.detach();
+        }else{
+            var h_height=$("div#information_header").css("height");
+            $("div#information").append(
+                $("div#addList_Tem").clone().
+                        attr({"id":"addList"}).
+                        css({"position":"absolute","width":"30%","top":h_height,"height":"20%","right":"2%"})
+            ).trigger("create");
+        }
+    }
+
+    var current_jsn;
+    function showAddView(add){
+        $("div#addList").detach();
+        if($("div#content").find(":input").length!=0){
+            current_jsn=getText();
+            itemClick(add,0);
+        }
+    }
+
+    function addImage(type){
+        food.image.initImage();
+        food.image.addEventListener();
+        food.upload.addImage(type,image_count,function(){
+            image_count++;
+            back();
+            resume(current_jsn);
+            alert("");
+        });
+    }
+</script>
+</html>
