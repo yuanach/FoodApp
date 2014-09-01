@@ -19,24 +19,19 @@
 
 package com.cau.foodapp;
 
-import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 
 import org.apache.cordova.*;
-import org.apache.cordova.camera.CameraLauncher;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import com.cau.plugin.data.Query;
-import com.cau.plugin.data.Upload;
 import com.cau.transit.Converse;
+import com.zbar.lib.CaptureActivity;
 
 public class FoodApp extends CordovaActivity 
 {
-	private static final int QR_REQUEST=0x11;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -51,44 +46,11 @@ public class FoodApp extends CordovaActivity
      //this.appView.addJavascriptInterface(new CameraLauncher(), "navigator"); 
     } 
     
-    //返回启动结果
-    @Override
-    public void onActivityResult(int requestCode,int resultCode,Intent intent){
-    	if(requestCode == QR_REQUEST  && resultCode == QR_REQUEST){
-    		Bundle data = intent.getExtras();
-    	}
-    }
-    
+  
     @Override
     public void onPause(){
     	Log.d("DEBUG","----WebView Paused--------");
     }
     
-    //启动二维码扫描
-    @JavascriptInterface
-    public void startQR(){
-    	Log.d("DEBUG","----startQrScanner--------");
-    	onPause();
-    	try{
-    		Intent intent=new Intent(FoodApp.this,CaptureActivity.class);
-    		startActivity(intent);
-    	}catch(Exception e){
-    		Log.e("DEBUG ERROR","Start error",e);
-    	}
-    }
-    
-    //启动RFID
-    @JavascriptInterface
-    public void startRFID(){
-    	Log.d("DEBUG","----startRFIDScanner--------");
-    	onPause();
-    	try{
-    		Intent intent=new Intent(FoodApp.this,SecondActivity.class);
-    		startActivity(intent);
-    		
-    	}catch(Exception e){
-    		Log.e("DEBUG ERROR","Start error",e);
-    	}
-    }
 }
 

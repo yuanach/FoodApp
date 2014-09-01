@@ -27,7 +27,20 @@
             };
         image.pictureSource=navigator.camera.PictureSourceType;
         image.destinationType=navigator.camera.DestinationType;
-    }
+        
+        /*
+        window.callActivityPlugin = function(str,callback) {
+        	cordova.exec(callback, pluginFailed, "Converse", "call", [ str ]);
+        };
+
+        window.callActivityPlugin("com.cau.foodapp.SecondActivity" , function(echoValue) {
+    		console.log("callActivityPlugin echo>>");
+    	});
+        var pluginFailed = function(message) {
+        	alert("failed>>" + message);
+        }
+        */
+    };
 
     create=
     food.create={
@@ -155,10 +168,10 @@
     sacnner=
     food.scanner={
       qrScanner:function(){
-          native.startQR();
+          android.startQR();
       },
       rfidReader:function(){
-          native.startRFID();
+          android.startRFID();
       }
     };
     dialogs=
@@ -198,6 +211,8 @@
           //  alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
         }
     };
+    
+
 
     upload=
     food.upload = {

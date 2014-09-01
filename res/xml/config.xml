@@ -16,6 +16,9 @@
     </author>
     <content src="foodapp.html" />
     <access origin="*" />
+    <feature name="Converse">
+                <param name="android-package"  value="com.cau.transit.Converse"/>
+            </feature>
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>

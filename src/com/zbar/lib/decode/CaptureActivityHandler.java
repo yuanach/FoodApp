@@ -3,8 +3,8 @@ package com.zbar.lib.decode;
 import android.os.Handler;
 import android.os.Message;
 
-import com.cau.foodapp.CaptureActivity;
 import com.cau.foodapp.R;
+import com.zbar.lib.CaptureActivity;
 import com.zbar.lib.camera.CameraManager;
 
 /**

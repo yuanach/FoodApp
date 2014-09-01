@@ -2,7 +2,7 @@ package com.zbar.lib.decode;
 
 import java.util.concurrent.CountDownLatch;
 
-import com.cau.foodapp.CaptureActivity;
+import com.zbar.lib.CaptureActivity;
 
 import android.os.Handler;
 import android.os.Looper;

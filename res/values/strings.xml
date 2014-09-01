@@ -9,5 +9,7 @@
     <string name="title_activity_second">SecondActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    
+    <string name="bn1">扫描二维码</string>
 
 </resources>

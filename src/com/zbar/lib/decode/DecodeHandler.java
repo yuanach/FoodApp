@@ -9,9 +9,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.cau.foodapp.CaptureActivity;
 import com.cau.foodapp.R;
-import com.cau.scanner.ZbarManager;
+import com.zbar.lib.CaptureActivity;
+import com.zbar.lib.ZbarManager;
 import com.zbar.lib.bitmap.PlanarYUVLuminanceSource;
 
 /**
