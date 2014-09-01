@@ -7,6 +7,6 @@ import org.json.JSONObject;
 
 public interface FoodWebServices {
 	public void initSoap() throws JSONException;
-	public String login() throws JSONException;
-	public List<String> uploadData(JSONObject packedJsn) throws JSONException;
+	public JSONObject login() throws JSONException;
+	public JSONObject uploadData() throws JSONException;
 }

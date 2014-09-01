@@ -10,6 +10,7 @@ public class UserLogin {
 	private String username;
 	private String passwd;
 	FoodWS loginWS;
+	private JSONObject res;
 	public UserLogin(String username, String passwd) {
 		super();
 		this.username = username;
@@ -17,8 +18,8 @@ public class UserLogin {
 	}
 	public void login() throws JSONException{
 		
-		JSONArray account=new JSONArray("{'username':'"+username+"','password':'"+passwd+"'}");
+		JSONObject account=new JSONObject("{'username':'"+username+"','password':'"+passwd+"'}");
 		loginWS=new FoodWS("login",account);
-		String res=loginWS.login();
+		res=loginWS.login();
 	}
 }

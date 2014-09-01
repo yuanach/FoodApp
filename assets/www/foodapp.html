@@ -51,7 +51,7 @@
                 <img src="images/index/data.jpg">
                 <h2>数据传送</h2>
                 <p>农产品、基础信息，农资、环境、作业记录</p></a></li>
-            <li><a id="" href="#" onclick="itemClick('barcode_list')">
+            <li><a id="" href="#" onclick="scanner('qrScanner')">
                 <img src="images/index/barcode.jpg">
                 <h2>扫码</h2>
                 <p>条形码、二维码</p></a></li>
@@ -59,12 +59,17 @@
                 <img src="images/index/location.jpg">
                 <h2>获取位置信息</h2>
                 <p>GPS坐标、定位精度、时间戳等</p></a></li>
-            <li><a id="" href="#" onclick="itemClick('rfid_list')">
+            <li><a id="" href="#" onclick="scanner('rfidReader')">
                 <img src="images/index/rfid.jpg">
                 <h2>RFID</h2>
                 <p>rfid</p>
             </a></li>
         </ul>
+    </div>
+
+    <!--barcodeList-->
+    <div id="barcode_list" data-role="content">
+
     </div>
 
     <!--InformationList-->
@@ -89,7 +94,6 @@
             </a></li>
         </ul>
     </div>
-
     <!--LocationList-->
     <div id="location_list" data-role="content">
         <ul data-role="listview" data-inset="true">
@@ -120,8 +124,8 @@
     <!--addImage-->
     <div id="addImage" data-role="content">
         <ul data-role="listview" data-inset="true">
-            <li data-icon="false"><a onclick="addImage('getPhoto')">Local</a></li>
-            <li data-icon="false"><a onclick="addImage('capturePhoto')">Camera</a></li>
+            <li data-icon="false"><a onclick="addImage('getPhoto')">从相册选取</a></li>
+            <li data-icon="false"><a onclick="addImage('capturePhoto')">现在拍摄</a></li>
         </ul>
     </div>
 
@@ -148,28 +152,28 @@
     <ul data-role="listview" data-inset="true">
         <li><a id="firm" href="#" onclick="itemClick('firm',1)">
             <img src="images/information/product/firm.jpg">
-            <h2>Firm</h2>
-            <p>firm</p></a></li>
+            <h2>企业组织</h2>
+            <p>相关责任企业或第三方组织机构</p></a></li>
         <li><a id="farm" href="#" onclick="itemClick('farm',1)">
             <img src="images/information/product/farm.jpg">
-            <h2>Farm</h2>
-            <p>farm</p></a></li>
+            <h2>农场</h2>
+            <p>农产品具体种植地</p></a></li>
         <li><a id="plot" href="#" onclick="itemClick('plot',1)">
             <img src="images/information/product/plot.jpg">
-            <h2>Plot</h2>
-            <p>plot</p></a></li>
+            <h2>种植地块</h2>
+            <p>有利于种植规划的一种区域划分</p></a></li>
         <li><a id="farmer" href="#" onclick="itemClick('farmer',1)">
             <img src="images/information/product/farmer.jpg">
-            <h2>Farmer</h2>
-            <p>farmer</p></a></li>
+            <h2>农户、工作人员</h2>
+            <p>种植者、工作人员的相关信息</p></a></li>
         <li><a id="product" href="#" onclick="itemClick('product',1)">
             <img src="images/information/product/product.jpg">
-            <h2>Product</h2>
-            <p>product</p></a></li>
+            <h2>种植产品</h2>
+            <p>某种植产品的具体信息</p></a></li>
         <li><a id="seed" href="#" onclick="itemClick('seed',1)">
             <img src="images/information/product/seed.jpg">
-            <h2>Seed</h2>
-            <p>seed</p></a></li>
+            <h2>种子选取</h2>
+            <p></p></a></li>
     </ul>
 </div>
 
@@ -203,32 +207,32 @@
 <div id="farm" data-role="content">
 
     <table><tr>
-        <td><label for="">���虹���:</label></td>
+        <td><label for="">编号:</label></td>
         <td><input type="text" name="farm_id"></td>
     </tr>
 
         <tr>
-            <td><label for="" >���哄��绉�:</label></td>
+            <td><label for="" >名称:</label></td>
             <td><input type="text" name="farm_name"></td>
         </tr>
 
         <tr>
-            <td><label for="">��灞�����:</label></td>
+            <td><label for="">农场主:</label></td>
             <td><input  type="text" name="farm_owner"></td>
         </tr>
 
         <tr>
-            <td><label for="">�板��:</label></td>
+            <td><label for="">地址:</label></td>
             <td><input  type="text" name="farm_addr"></td>
         </tr>
 
         <tr>
-            <td><label for="" >���烘��杩�:</label></td>
+            <td><label for="" >介绍:</label></td>
             <td><input type="text" name="farm_info"></td>
         </tr>
 
         <tr>
-            <td><label for="" >��绯绘�瑰�:</label></td>
+            <td><label for="" >联系方式:</label></td>
             <td><input type="text" name="farm_contact"></td>
         </tr></table>
 </div>
@@ -237,34 +241,30 @@
 <div id="plot" data-role="content">
 
     <table><tr>
-        <td><label for="">�板��缂��凤�</label></td>
+        <td><label for="">编号：</label></td>
         <td><input type="text" name="plot_id"></td>
     </tr>
 
         <tr>
-            <td><label for="">�板����绉�:</label></td>
+            <td><label for="">名称:</label></td>
             <td><input type="text" name="plot_name"></td>
         </tr>
 
         <tr>
-            <td><label for="">���虹���:</label></td>
+            <td><label for="">农场编号:</label></td>
             <td><input type="text" name="farm_id"></td>
         </tr>
 
         <tr>
-            <td><label for="">���哄��绉�:</label></td>
+            <td><label for="">农场名称:</label></td>
             <td><input type="text" name="farm_name"></td>
         </tr>
 
         <tr>
-            <td><label for="">�板��澶у�:</label></td>
+            <td><label for="">规模:</label></td>
             <td><input type="text" name="plot_size"></td>
         </tr>
-
-        <tr>
-            <td><label for="">�板��浣�缃�:</label></td>
-            <td><input type="text" name="plot_addr"></td>
-        </tr></table>
+        </table>
 
 </div>
 
@@ -272,73 +272,59 @@
 <div id="farmer" data-role="content">
 
     <table><tr>
-        <td><label for="">濮���:</label></td>
+        <td><label for="">姓名:</label></td>
         <td><input type="text" name="farmer_name"></td>
     </tr>
 
         <tr>
-            <td><label for="">�电О:</label></td>
+            <td><label for="">联系方式:</label></td>
             <td><input type="text" name="farmer_"></td>
         </tr>
 
         <tr>
-            <td><label for="">��灞�����:</label></td>
+            <td><label for="">个人信息:</label></td>
             <td><input type="text" name="farm_id"></td>
         </tr>
-
-        <tr>
-            <td><label for="">1:</label></td>
-            <td><input type="text" name=""></td>
-        </tr>
-
-        <tr>
-            <td><label for="">1:</label></td>
-            <td><input type="text" name=""></td>
-        </tr></table>
+	</table>
 </div>
 
 <!--Product-->
 <div id="product" data-role="content">
 
     <table><tr>
-        <td><label for="">浜у��缂���:</label></td>
+        <td><label for="">编号:</label></td>
         <td><input type="text" name="product_id"></td>
     </tr>
 
         <tr>
-            <td><label for="">绉�妞�浜у����绉�:</label></td>
+            <td><label for="">名称:</label></td>
             <td><input type="text" name="product_name"></td>
         </tr>
 
         <tr>
-            <td><label for="">绉�瀛�绫诲��:</label></td>
+            <td><label for="">种子选取:</label></td>
             <td><input type="text" name="seed_id"></td>
         </tr>
 
         <tr>
-            <td><label for="">����,�板��:</label></td>
+            <td><label for="">生产源地:</label></td>
             <td><input type="text" name="farm_id">
                 <input type="text" name="plot_id">
             </td>
         </tr>
 
         <tr>
-            <td><label for="">浠�缁�:</label></td>
+            <td><label for="">介绍:</label></td>
             <td><input type="text" name="product_info"></td>
         </tr>
 
         <tr>
-            <td><label for="">�板��:</label></td>
-            <td><input type="text" name="plot_id"></td>
-        </tr>
-
-        <tr>
-            <td><label for="">绉�妞��ユ��:</label></td>
+            <td><label for="">种植时间:</label></td>
             <td><input type="text" name="product_plant"></td>
         </tr>
 
         <tr>
-            <td><label for="">�惰�锋�ユ��:</label></td>
+            <td><label for="">收获时间:</label></td>
             <td><input type="text" name="product_harvest"></td>
         </tr></table>
 
@@ -348,27 +334,27 @@
 <div id="seed" data-role="content">
 
     <table><tr>
-        <td><label for="">绉�瀛�缂���:</label></td>
+        <td><label for="">编号:</label></td>
         <td><input type="text" name="seed_id"></td>
     </tr>
 
         <tr>
-            <td><label for="">绉�瀛���绉�:</label></td>
+            <td><label for="">种子名称:</label></td>
             <td><input type="text" name="seed_name"></td>
         </tr>
 
         <tr>
-            <td><label for="">璐�涔版�ユ��:</label></td>
+            <td><label for="">购买时间:</label></td>
             <td><input type="text" name="seed_buy"></td>
         </tr>
 
         <tr>
-            <td><label for="">璐�涔板��璇�:</label></td>
+            <td><label for="">购买证明:</label></td>
             <td><input type="text" name="seed_certify"></td>
         </tr>
 
         <tr>
-            <td><label for="">绉�瀛���杩�:</label></td>
+            <td><label for="">其他信息:</label></td>
             <td><input type="text" name="seed_info"></td>
         </tr></table>
 
@@ -381,26 +367,26 @@
 <!--Item-->
 <div id="inputs_list_item" data-role="content">
     <ul data-role="listview" data-inset="true">
-        <li><a id="devices" href="#" onclick="itemClick('devices')">
+        <li><a id="devices" href="#" onclick="itemClick('devices',1)">
             <img src="">
-            <h2></h2>
-            <p></p>devices</a></li>
-        <li><a id="fertilizer" href="#" onclick="itemClick('fertilizer')">
+            <h2>设施投入:</h2>
+            <p>种植设备、作业工具信息</p></a></li>
+        <li><a id="fertilizer" href="#" onclick="itemClick('fertilizer',1)">
             <img src="">
-            <h2></h2>
-            <p></p>fertilizer</a></li>
-        <li><a id="irrigation" href="#" onclick="itemClick('irrigation')">
+            <h2>肥料:</h2>
+            <p>化肥、有机肥使用信息</p></a></li>
+        <li><a id="irrigation" href="#" onclick="itemClick('irrigation',1)">
             <img src="">
-            <h2></h2>
-            <p></p>irrigation</a></li>
-        <li><a id="soil" href="#" onclick="itemClick('soil')">
+            <h2>灌溉水源:</h2>
+            <p>灌溉水检测信息</p></a></li>
+        <li><a id="soil" href="#" onclick="itemClick('soil',1)">
             <img src="">
-            <h2></h2>
-            <p></p>soil</a></li>
-        <li><a id="air" href="#" onclick="itemClick('air')">
+            <h2>土壤:</h2>
+            <p>土壤检测信息</p></a></li>
+        <li><a id="air" href="#" onclick="itemClick('air',1)">
             <img src="">
-            <h2></h2>
-            <p></p>air</a></li>
+            <h2>空气状况:</h2>
+            <p>空气湿度、污染等情况</p></a></li>
     </ul>
 </div>
 
@@ -589,11 +575,11 @@
     <!--Item-->
     <div id="environment_list_item" data-role="content">
         <ul data-role="listview" data-inset="true">
-            <li><a id="temperature" href="#" onclick="itemClick('temperature')">
+            <li><a id="temperature" href="#" onclick="itemClick('temperature',1)">
                 <img src="">
                 <h2></h2>
                 <p></p>temperature</a></li>
-            <li><a id="humidity" href="#" onclick="itemClick('humidity')">
+            <li><a id="humidity" href="#" onclick="itemClick('humidity',1)">
                 <img src="">
                 <h2></h2>
                 <p></p>humidity</a></li>
@@ -666,19 +652,19 @@
     <!--Item-->
     <div id="operation_list_item" data-role="content">
         <ul data-role="listview" data-inset="true">
-            <li><a id="fertilize" href="#" onclick="itemClick('fertilize')">
+            <li><a id="fertilize" href="#" onclick="itemClick('fertilize',1)">
                 <img src="">
                 <h2></h2>
                 <p></p>fertilize</a></li>
-            <li><a id="pest" href="#" onclick="itemClick('pest')">
+            <li><a id="pest" href="#" onclick="itemClick('pest',1)">
                 <img src="">
                 <h2></h2>
                 <p></p>pest</a></li>
-            <li><a id="irrigate" href="#" onclick="itemClick('irrigate')">
+            <li><a id="irrigate" href="#" onclick="itemClick('irrigate',1)">
                 <img src="">
                 <h2></h2>
                 <p></p>irrigate</a></li>
-            <li><a id="operator" href="#" onclick="itemClick('operator')">
+            <li><a id="operator" href="#" onclick="itemClick('operator',1)">
                 <img src="">
                 <h2></h2>
                 <p></p>operator</a></li>
@@ -814,6 +800,8 @@
     var lastView=-1
             ,nowView=1;
     var image_count=0;
+    
+    var _isInput=0;
     //food.dialogs.showAlert("添加图片成功","提示","确定");
 
     function itemClick(text,isInput){
@@ -832,6 +820,7 @@
         content.empty();
         content.append(item).trigger("create");
         if(isInput==1){
+        	_isInput=1;
             food.upload.initUpload();
             content.append($("div#footer").clone(true)).trigger("create");
         }
@@ -886,17 +875,19 @@
     }
 
     function addList(){
-        var addList= $("div#addList");
-        if(addList.length!=0){
-            addList.detach();
-        }else{
-            var h_height=$("div#foodapp_header").css("height");
-            $("div#foodapp").append(
+    	if($("div#content").find(":input").length!=0){
+        	var addList= $("div#addList");
+        	if(addList.length!=0){
+            	addList.detach();
+        	}else{
+            	var h_height=$("div#foodapp_header").css("height");
+            	$("div#foodapp").append(
                     $("div#addList_Tem").clone().
                             attr({"id":"addList"}).
                             css({"position":"absolute","width":"30%","top":h_height,"height":"20%","right":"2%"})
-            ).trigger("create");
-        }
+            	).trigger("create");
+        	}
+    	}
     }
 
     var current_jsn;
@@ -917,6 +908,10 @@
             //food.dialogs.showAlert("添加图片成功","提示","确定");
             //food.dialogs.showConfirm("添加图片成功","提示",["确定","返回"]);
         });
+    }
+
+    function scanner(launcher){
+        food.scanner[launcher]();
     }
 </script>
 </html>

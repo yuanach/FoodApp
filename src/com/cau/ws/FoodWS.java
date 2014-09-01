@@ -2,6 +2,7 @@ package com.cau.ws;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -23,7 +24,7 @@ public class FoodWS implements FoodWebServices{
 	private int version;
 	private String targetNameSpace;
 	private String serviceUrl;
-	private JSONArray properties;
+	private JSONObject properties;
 	private String methodName;
 	
 
@@ -34,14 +35,14 @@ public class FoodWS implements FoodWebServices{
 		serviceUrl=Param.serviceUrl;
 		version=Param.VER;
 	}
-	public FoodWS(String methodName,JSONArray properties){
+	public FoodWS(String methodName,JSONObject  properties){
 		this();
 		this.methodName=methodName;
 		this.properties=properties;
 	}
 
 	public FoodWS(int version, String targetNameSpace, String serviceUrl,
-			JSONArray properties, String methodName) {
+			JSONObject  properties, String methodName) {
 		super();
 		this.version = version;
 		this.targetNameSpace = targetNameSpace;
@@ -74,16 +75,21 @@ public class FoodWS implements FoodWebServices{
 	public String getMethodName() {
 		return methodName;
 	}	
-	public JSONArray getProperties() {
+	public JSONObject  getProperties() {
 		return properties;
 	}
 	
 	@Override
-	public void initSoap() throws JSONException {
+	public void initSoap() throws JSONException{
 		this.request=new SoapObject(targetNameSpace,methodName);
-		for(int i=0;i<properties.length();i+=2){
-			request.addProperty(properties.getString(i),properties.getString(i+1));
+		Iterator it=properties.keys();
+		while(it.hasNext()){
+			String key=(String)it.next();
+			String value;
+			value = properties.getString(key);
+			request.addProperty(key,value);
 		}
+		request.getAttribute(0);
 		this.envelope=new SoapSerializationEnvelope(version);
 		envelope.dotNet=true;
 		envelope.bodyOut=request;
@@ -92,54 +98,56 @@ public class FoodWS implements FoodWebServices{
 	}
 	
 	@Override
-	public List<String> uploadData(JSONObject packedJsn) throws JSONException {
-		List<String> reslist=new ArrayList<String>();
-		
+	public JSONObject uploadData() throws JSONException {
+		JSONObject reslist=new JSONObject();
+		String[] attr={"isSuccess","isFault","message"};	
 		initSoap();
 		
 		try {
 			ht.call(targetNameSpace+methodName,envelope);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (XmlPullParserException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
 		try{
 			result=(SoapObject)envelope.getResponse();
+			result.getProperty("isSuccess");
+			result.getProperty("isFault");
 			int count=result.getPropertyCount();
-			for(int i=0;i<count;i++){
-				reslist.add(result.getProperty(i).toString());
+			for(int i=0;i<attr.length;i++){
+				reslist.put(attr[i], result.getProperty(attr[i]));
 			}
 		}catch(Exception e){
 			System.out.println(e);
-			reslist.add(e.toString());
+				reslist.put("isFault", "2");
+				reslist.put("message", "Soap transport error!");
 		}
 		return reslist;
 	}
 	
 	@Override
-	public String login() throws JSONException {
+	public JSONObject login() throws JSONException{
 		
-		String res;
+		JSONObject res=new JSONObject();
 		initSoap();
 		
 		try {
 			ht.call(targetNameSpace+methodName,envelope);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (XmlPullParserException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		try{
 			result=(SoapObject)envelope.getResponse();
-			res=result.getProperty(0).toString();
+			res.put("isFault", result.getProperty("isFault"));
+			res.put("message", result.getProperty("message"));
 		}catch(Exception e){
 			System.out.println(e);
-			res=e.toString();
+			res.put("isFault", "1");
+			res.put("message", e.toString());
 		}
 		return res;
 	}

@@ -10,6 +10,7 @@
         location,
         file,
         dialogs,
+        scanner,
         upload;
 
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -151,6 +152,15 @@
 
     };
 
+    sacnner=
+    food.scanner={
+      qrScanner:function(){
+          native.startQR();
+      },
+      rfidReader:function(){
+          native.startRFID();
+      }
+    };
     dialogs=
     food.dialogs={
         showAlert:function(message,title,buttonName){
@@ -188,6 +198,7 @@
           //  alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
         }
     };
+
     upload=
     food.upload = {
         initUpload:function(){

@@ -3,8 +3,7 @@
     <name>Hello Cordova</name>
     <preference name="loglevel" value="DEBUG" />
     <preference name="SplashScreen" value="screen" />
-	<preference name="SplashScreenDelay" value="5000" />
-	
+    <preference name="SplashScreenDelay" value="5000" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
@@ -17,9 +16,9 @@
     </author>
     <content src="foodapp.html" />
     <access origin="*" />
-   	<feature name="Device">
-    	<param name="android-package" value="org.apache.cordova.device.Device" />
-		</feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
@@ -45,7 +44,6 @@
     <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
-
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
     </feature>
