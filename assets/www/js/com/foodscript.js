@@ -40,7 +40,7 @@
         	alert("failed>>" + message);
         }
         */
-    };
+    }
 
     create=
     food.create={
@@ -152,11 +152,11 @@
             location.retrieval();
         },
         geolocationError:function(err){
-            location.retrieval();
+            location.retrieval({});
             console.log("Get position information failed: "+err);
         },
-        retrieval:function(){
-            this.callback(location.position);
+        retrieval:function(position){
+            this.callback(position);
         }
     };
 
@@ -174,6 +174,7 @@
           android.startRFID();
       }
     };
+
     dialogs=
     food.dialogs={
         showAlert:function(message,title,buttonName){
@@ -211,8 +212,6 @@
           //  alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
         }
     };
-    
-
 
     upload=
     food.upload = {
@@ -227,10 +226,11 @@
          },
         wrap:function() {
              android.wrap(
-                 JSON.stringify(upload.metaData),
-                 JSON.stringify(upload.jsn),
-                JSON.stringify(upload.img),
-                JSON.stringify(upload.video));
+                 JSON.stringify({
+                     metaData:JSON.stringify(upload.metaData),
+                     jsn:JSON.stringify(upload.jsn),
+                     img:JSON.stringify(upload.img),
+                     video:JSON.stringify(upload.video)}));
             // return true;
         },
         onSubmit:function (obj, jsn) {
@@ -251,7 +251,7 @@
                    }
                });
         },
-        "addVideo":function (type, video_count) {
+        addVideo:function (type, video_count) {
             //  food.image[type]();
             // food.upload.video[video_count]=null;
         }

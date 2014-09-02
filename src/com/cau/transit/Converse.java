@@ -27,12 +27,13 @@ public class Converse extends CordovaPlugin{
 	private static final int RFID_REQUEST=0x11;
 	public static final String ACTION = "call";
 	
+	/*
 	 @Override  
 	    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {  
 	        if (action.equals(ACTION)) {  
 	            try {    
 	            	Intent intent = new Intent().setClass(cordova.getActivity(), Class.forName(args.getString(0)));  
-	                this.cordova.startActivityForResult(this, intent, 1);  
+	                this.cordova.startActivityForResult(this, intent, QR_REQUEST);  
 	                //下面三句为cordova插件回调页面的逻辑代码  
 	                PluginResult mPlugin = new PluginResult(PluginResult.Status.NO_RESULT);  
 	                mPlugin.setKeepCallback(true);  
@@ -47,10 +48,10 @@ public class Converse extends CordovaPlugin{
 	  
 	        return true;  
 	    }  
-	 
+	 */
 	@JavascriptInterface
     public boolean wrap(String data) throws JSONException{
-    	//System.out.println("---------"+imgs); 
+    	//System.out.println("---------"+data); 
     	//List<JSONObject> jsnlist=new ArrayList<JSONObject>();
     	JSONObject jsn=new JSONObject(data);  	
         return true;		
@@ -75,12 +76,19 @@ public class Converse extends CordovaPlugin{
     public void startQR(){
     	Log.d("DEBUG","----startQrScanner--------");
     	//onPause();
-    	try{
-    		Intent intent=new Intent(cordova.getActivity(),CaptureActivity.class);
-    		this.cordova.startActivityForResult(this,intent,QR_REQUEST);
-    	}catch(Exception e){
-    		Log.e("DEBUG ERROR","Start error",e);
-    	}
+    	cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+            	try{
+                Context context = cordova.getActivity()
+                        .getApplicationContext();
+                Intent intent = new Intent(context, CaptureActivity.class);
+                cordova.getActivity().startActivity(intent);
+            	}catch(Exception e){
+            		Log.e("DEBUG ERROR","Start error",e);
+            	}
+            }       
+          }); 	
     }
     
     //启动RFID
@@ -88,13 +96,18 @@ public class Converse extends CordovaPlugin{
     public void startRFID(){
     	Log.d("DEBUG","----startRFIDScanner--------");
     	//onPause();
-    	try{
-    		Intent intent=new Intent(cordova.getActivity(),SecondActivity.class);
-    		this.cordova.startActivityForResult(this,intent,RFID_REQUEST);
-    		
-    	}catch(Exception e){
-    		Log.e("DEBUG ERROR","Start error",e);
-    	}
+    	cordova.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+            	try{
+                Context context = cordova.getActivity()
+                        .getApplicationContext();
+                Intent intent = new Intent(context, SecondActivity.class);
+                cordova.getActivity().startActivity(intent);
+            	}catch(Exception e){
+            		Log.e("DEBUG ERROR","Start error",e);
+            	}
+            }       
+          }); 	 	
     }
-	
 }

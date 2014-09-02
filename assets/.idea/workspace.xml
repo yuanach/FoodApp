@@ -20,81 +20,66 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="foodscript.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="foodscript.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/com/foodscript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="160" column="29" selection-start="5050" selection-end="5050" vertical-scroll-proportion="0.64098835">
+            <state line="229" column="62" selection-start="6993" selection-end="6993" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#272#693#0" expanded="false" />
-                <element signature="e#723#1458#0" expanded="false" />
-                <element signature="e#1487#2911#0" expanded="false" />
-                <element signature="e#2946#4857#0" expanded="false" />
-                <element signature="e#5096#6163#0" expanded="false" />
-                <element signature="e#6196#7525#0" expanded="false" />
+                <element signature="e#1146#1881#0" expanded="false" />
+                <element signature="e#1910#3334#0" expanded="false" />
+                <element signature="e#3369#5281#0" expanded="false" />
+                <element signature="e#5349#5490#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alert.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/back/alert.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="34" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="foodapp.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="foodapp.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/foodapp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="913" column="33" selection-start="24306" selection-end="24306" vertical-scroll-proportion="-17.464285">
+            <state line="17" column="2" selection-start="774" selection-end="774" vertical-scroll-proportion="0.4878788">
               <folding>
-                <element signature="tag#head#0;tag#html#0" expanded="false" />
                 <element signature="tag#style#0;tag#head#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#2;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#3;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#4;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#5;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#6;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#0;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#1;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#tr#0;tag#table#0;tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#3;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#4;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#5;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#6;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#1;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#3;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#4;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#5;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#6;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#1;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
                 <element signature="tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#0;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#1;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#3;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#4;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="e#21183#22183#0" expanded="false" />
-                <element signature="e#22204#22591#0" expanded="false" />
-                <element signature="e#22615#22781#0" expanded="false" />
-                <element signature="e#22807#22932#0" expanded="false" />
-                <element signature="e#22954#23007#0" expanded="false" />
-                <element signature="e#23030#23099#0" expanded="false" />
-                <element signature="e#23123#23672#0" expanded="false" />
-                <element signature="e#23724#23896#0" expanded="false" />
+                <element signature="tag#script#0;tag#html#0" expanded="false" />
+                <element signature="e#22190#23190#0" expanded="false" />
+                <element signature="e#23211#23447#0" expanded="false" />
+                <element signature="e#23468#23855#0" expanded="false" />
+                <element signature="e#23879#24045#0" expanded="false" />
+                <element signature="e#24071#24196#0" expanded="false" />
+                <element signature="e#24218#24271#0" expanded="false" />
+                <element signature="e#24294#24363#0" expanded="false" />
+                <element signature="e#24387#24936#0" expanded="false" />
+                <element signature="e#24988#25160#0" expanded="false" />
+                <element signature="e#25189#25503#0" expanded="false" />
+                <element signature="e#25535#25576#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="info.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="15" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,7 +87,7 @@
       <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="52" selection-start="308" selection-end="308" vertical-scroll-proportion="-0.6785714">
+            <state line="9" column="9" selection-start="311" selection-end="355" vertical-scroll-proportion="-6.107143">
               <folding />
             </state>
           </provider>
@@ -123,7 +108,9 @@
         <option value="$PROJECT_DIR$/www/location.html" />
         <option value="$PROJECT_DIR$/www/back/alert.html" />
         <option value="$PROJECT_DIR$/www/js/com/foodscript.js" />
+        <option value="$PROJECT_DIR$/www/test.html" />
         <option value="$PROJECT_DIR$/www/foodapp.html" />
+        <option value="$PROJECT_DIR$/www/js/info.js" />
       </list>
     </option>
   </component>
@@ -159,7 +146,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,12 +200,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,8 +233,8 @@
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Custom" />
     <property name="last_opened_file_path" value="D:/FoodHtml" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -349,50 +354,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="6" selection-start="939" selection-end="939" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="tag#head#0;tag#html#0" expanded="false" />
             <element signature="tag#style#0;tag#head#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#3;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#4;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#5;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#6;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#0;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#1;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#tr#0;tag#table#0;tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#3;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#4;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#5;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#6;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#5;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#6;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="e#21183#22183#0" expanded="false" />
-            <element signature="e#22204#22591#0" expanded="false" />
-            <element signature="e#22615#22781#0" expanded="false" />
-            <element signature="e#22807#22932#0" expanded="false" />
-            <element signature="e#22954#23007#0" expanded="false" />
-            <element signature="e#23030#23099#0" expanded="false" />
-            <element signature="e#23123#23672#0" expanded="false" />
-            <element signature="e#23724#23896#0" expanded="false" />
+            <element signature="tag#script#0;tag#html#0" expanded="false" />
+            <element signature="e#22190#23190#0" expanded="false" />
+            <element signature="e#23211#23447#0" expanded="false" />
+            <element signature="e#23468#23855#0" expanded="false" />
+            <element signature="e#23879#24045#0" expanded="false" />
+            <element signature="e#24071#24196#0" expanded="false" />
+            <element signature="e#24218#24271#0" expanded="false" />
+            <element signature="e#24294#24363#0" expanded="false" />
+            <element signature="e#24387#24936#0" expanded="false" />
+            <element signature="e#24988#25160#0" expanded="false" />
+            <element signature="e#25189#25503#0" expanded="false" />
+            <element signature="e#25535#25576#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -408,12 +400,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="129" column="1" selection-start="3204" selection-end="3204" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#272#693#0" expanded="false" />
-            <element signature="e#723#1458#0" expanded="false" />
-            <element signature="e#1487#2911#0" expanded="false" />
-            <element signature="e#2946#4857#0" expanded="false" />
-            <element signature="e#5096#6163#0" expanded="false" />
-            <element signature="e#6196#7525#0" expanded="false" />
+            <element signature="e#1146#1881#0" expanded="false" />
+            <element signature="e#1910#3334#0" expanded="false" />
+            <element signature="e#3369#5281#0" expanded="false" />
+            <element signature="e#5349#5490#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -422,12 +412,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="155" column="24" selection-start="3709" selection-end="3709" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#272#693#0" expanded="false" />
-            <element signature="e#723#1458#0" expanded="false" />
-            <element signature="e#1487#2911#0" expanded="false" />
-            <element signature="e#2946#4857#0" expanded="false" />
-            <element signature="e#5096#6163#0" expanded="false" />
-            <element signature="e#6196#7525#0" expanded="false" />
+            <element signature="e#1146#1881#0" expanded="false" />
+            <element signature="e#1910#3334#0" expanded="false" />
+            <element signature="e#3369#5281#0" expanded="false" />
+            <element signature="e#5349#5490#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -480,82 +468,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/info.js">
+    <entry file="file://$PROJECT_DIR$/www/js/com/foodscript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="26" selection-start="249" selection-end="249" vertical-scroll-proportion="0.2761628">
-          <folding />
+        <state line="229" column="62" selection-start="6993" selection-end="6993" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1146#1881#0" expanded="false" />
+            <element signature="e#1910#3334#0" expanded="false" />
+            <element signature="e#3369#5281#0" expanded="false" />
+            <element signature="e#5349#5490#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="52" selection-start="308" selection-end="308" vertical-scroll-proportion="-0.6785714">
+        <state line="9" column="9" selection-start="311" selection-end="355" vertical-scroll-proportion="-6.107143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="15" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/foodapp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="913" column="33" selection-start="24306" selection-end="24306" vertical-scroll-proportion="-17.464285">
+        <state line="17" column="2" selection-start="774" selection-end="774" vertical-scroll-proportion="0.4878788">
           <folding>
-            <element signature="tag#head#0;tag#html#0" expanded="false" />
             <element signature="tag#style#0;tag#head#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#3;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#4;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#5;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#6;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#0;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#1;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#tr#0;tag#table#0;tag#div#2;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#3;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#4;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#5;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#6;tag#div#2;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#5;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#6;tag#div#3;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#4;tag#body#0;tag#html#0" expanded="false" />
             <element signature="tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#0;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#1;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#4;tag#div#5;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="e#21183#22183#0" expanded="false" />
-            <element signature="e#22204#22591#0" expanded="false" />
-            <element signature="e#22615#22781#0" expanded="false" />
-            <element signature="e#22807#22932#0" expanded="false" />
-            <element signature="e#22954#23007#0" expanded="false" />
-            <element signature="e#23030#23099#0" expanded="false" />
-            <element signature="e#23123#23672#0" expanded="false" />
-            <element signature="e#23724#23896#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/com/foodscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="160" column="29" selection-start="5050" selection-end="5050" vertical-scroll-proportion="0.64098835">
-          <folding>
-            <element signature="e#272#693#0" expanded="false" />
-            <element signature="e#723#1458#0" expanded="false" />
-            <element signature="e#1487#2911#0" expanded="false" />
-            <element signature="e#2946#4857#0" expanded="false" />
-            <element signature="e#5096#6163#0" expanded="false" />
-            <element signature="e#6196#7525#0" expanded="false" />
+            <element signature="tag#script#0;tag#html#0" expanded="false" />
+            <element signature="e#22190#23190#0" expanded="false" />
+            <element signature="e#23211#23447#0" expanded="false" />
+            <element signature="e#23468#23855#0" expanded="false" />
+            <element signature="e#23879#24045#0" expanded="false" />
+            <element signature="e#24071#24196#0" expanded="false" />
+            <element signature="e#24218#24271#0" expanded="false" />
+            <element signature="e#24294#24363#0" expanded="false" />
+            <element signature="e#24387#24936#0" expanded="false" />
+            <element signature="e#24988#25160#0" expanded="false" />
+            <element signature="e#25189#25503#0" expanded="false" />
+            <element signature="e#25535#25576#0" expanded="false" />
           </folding>
         </state>
       </provider>

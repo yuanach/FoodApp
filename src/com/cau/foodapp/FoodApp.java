@@ -41,7 +41,6 @@ public class FoodApp extends CordovaActivity
         super.loadUrl(Config.getStartUrl());  
         //super.loadUrl("file:///android_asset/www/index.html")
        // 
-        this.appView.addJavascriptInterface(new FoodApp(), "native"); 
         this.appView.addJavascriptInterface(new Converse(), "android"); 
      //this.appView.addJavascriptInterface(new CameraLauncher(), "navigator"); 
     } 
@@ -49,6 +48,7 @@ public class FoodApp extends CordovaActivity
   
     @Override
     public void onPause(){
+    	super.onPause();
     	Log.d("DEBUG","----WebView Paused--------");
     }
     

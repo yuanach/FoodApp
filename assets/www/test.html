@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Notification Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        // Empty
-    }
-
-    // alert dialog dismissed
-        function alertDismissed() {
-            // do something
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <style>
+        #header{
+            height: 40px;
         }
+    </style>
+</head>
+<body>
 
-    // Show a custom alertDismissed
-    //
-    function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
+<div data-role="page">
+    <div data-role="header" id="header">
+        <a href="#" data-role="button" data-icon="home">首页</a>
+        <h1>欢迎访问我的主页</h1>
+        <a href="#" data-role="button" data-icon="search">搜索</a>
+    </div>
+</div>
 
-    </script>
-  </head>
-  <body>
-    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
-  </body>
+</body>
 </html>

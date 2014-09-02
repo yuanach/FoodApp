@@ -10,4 +10,4 @@ $(document).ready(function(){
     var content=$("#content");
     content.append($("div#list_item").clone(true)).trigger("create");
     //$("div#footer").detach();
-})
+});
